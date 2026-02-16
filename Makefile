@@ -17,7 +17,7 @@ $(BUILD_DIR):
 
 $(TARGET): $(OBJS)
 	$(CC) $(OBJS) $(LDFLAGS) -o $(TARGET)
-	@echo "✅ Build complete: ./$(TARGET)"
+	@echo "Build complete: ./$(TARGET)"
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -27,7 +27,6 @@ clean:
 	@echo "🧹 Cleaned build artifacts"
 
 run: $(TARGET)
-	@echo "🚀 Running hypervisor..."
 	./$(TARGET)
 
 .PHONY: all clean run
